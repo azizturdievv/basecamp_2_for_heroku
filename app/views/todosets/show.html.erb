@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @todoset %>
+
+<div>
+  <%= link_to "Edit this todoset", edit_todoset_path(@todoset) %> |
+  <%= link_to "Back to todosets", todosets_path %>
+
+  <%= button_to "Destroy this todoset", @todoset, method: :delete %>
+</div>

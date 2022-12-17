@@ -1,0 +1,9 @@
+<h1>Editing message</h1>
+
+<%= render "form", message: @message %>
+
+<br>
+
+<div>
+  <%= link_to "Back to messages", project_message_board_path(@project,@message_board) %>
+</div>

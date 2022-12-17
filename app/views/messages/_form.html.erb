@@ -1,0 +1,68 @@
+<%= form_with(model: message, data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" }) do |form| %>
+  <% if message.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+      <ul>
+        <% message.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+  
+  <% if action_name == "edit" %>
+    <%= form.label :name, style: "display: block" %>
+  <% end %>
+    <%= form.text_field :name %> <%= form.submit class: "button-74" %>
+  </div>
+
+  <div>
+    <%= form.text_field :message_board_id, value: @message_board.id, type: :hidden %>
+  </div>
+
+  <div>
+    
+  </div>
+<% end %>
+
+
+<style>
+/* CSS */
+.button-74 {
+  background-color: #fbeee0;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-74:hover {
+  background-color: #fff;
+}
+
+.button-74:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .button-74 {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}
+</style>

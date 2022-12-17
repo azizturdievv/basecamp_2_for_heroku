@@ -1,0 +1,171 @@
+<h1>Your To-do List</h1>
+<div class="field-container">
+ <%= render partial: "todosets/form", locals: { todoset: Todoset.new } %>
+
+      </div>
+      <div class="container" id="todosets">
+    <% @todosets.each do |todoset| %>
+    <ul class="todo" id="todo">
+      
+    
+    <li><%= todoset.name %><div class="buttons"><%= link_to todoset, 'data-turbo-method': :delete, class:"remove base" do%><i class="bi bi-file-earmark-x"></i><% end %><%= link_to edit_project_todoset_path(@project,todoset), class: "complete base" do %><i class="bi bi-pencil-square"></i><% end %></div></li>
+    
+
+
+    </ul>
+  <% end %>
+</div>
+<footer>
+<div class="footer">
+  <hr>
+  <p><%= link_to "Back", project_path(@project) %></p>
+</div>
+</footer>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+.base{
+      font-size: 28px;
+}
+h1 {
+text-align: center;
+text-shadow: 0 3px 6px #70707057;
+}
+
+.field-container {
+  padding: 0;
+margin: 0;
+box-sizing: border-box;
+font-family: 'roboto', sans-serif;
+  background: var(--lightRed);
+padding: 2em;
+  --darkRed: #ce4d4d;
+--lightGrey: #c2c2c2;
+--green: #4CF2AA;
+--lightRed: #F5CDCD;
+width: 70vw;
+margin: 0 auto;
+margin-top: 1.5em;
+box-shadow: 0px 3px 6px 0 #00000057;
+}
+
+input {
+width: 90%;
+height: 50px;
+border: 0;
+padding: 0em;
+font-size: 1em;
+}
+
+#add {
+position: absolute;
+background: var(--darkRed);
+right: 15%;
+width: 50px;
+height: 50px;
+border: 0;
+}
+
+#add svg{
+width: 28px;
+height: 28px;
+fill: var(--lightRed);
+}
+
+.container {
+height: 45vh;
+width: 70vw;
+margin: 0 auto;
+margin-top: 2em;
+background: white;
+box-shadow: 0px 3px 6px 0 #00000057;
+overflow-y: scroll;
+}
+
+ul{
+padding: 2em 0;
+}
+
+li {
+list-style-type: none;
+padding-left: 1em;
+padding-right: .2em;
+padding-top: 1em;
+}
+
+li.complete {
+color: #70707050;
+}
+
+.buttons {
+display: inline;
+float: right;
+}
+
+.buttons button {
+border: 0;
+background: none;
+}
+
+.li-icon {
+font-size: 1.5em;
+padding: .25em;
+color: var(--lightGrey);
+transition: .2s ease-out;
+}
+
+.buttons button:hover .fa-check{
+color: var(--green);
+}
+
+.buttons button:hover .fa-trash {
+color: var(--darkRed);
+}
+
+li.complete .fa-check{
+color: var(--green);
+}
+footer {
+background-color: white;
+text-align: center;
+margin: 0 auto;
+margin-top: 1.5em;
+padding: 1em;
+box-shadow: 0 3px 6px 0 #00000057;
+width: 70vw;
+}
+div.footer {
+display: inline-block;
+}
+.footer hr {
+width: 50%;
+margin: 0 auto;
+margin-bottom: 5px;
+}
+
+.footer p {
+text-align: center;
+font-size: .8em;
+}
+</style>
