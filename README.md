@@ -1,7 +1,7 @@
 # Welcome to My Basecamp 2
 ***
 ### My github
-https://github.com/azizturdievv/basecamp2heroku
+https://github.com/azizturdievv/basecamp_2_for_heroku/
 ### In host
 https://basecamp2qwasar.herokuapp.com/
 
